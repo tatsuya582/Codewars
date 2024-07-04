@@ -1,0 +1,13 @@
+services:
+  ruby:
+    build: .
+    ports:
+      - "4567:4567"
+    container_name: ruby_playground
+    tty: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    environment:
+      - BIND=0.0.0.0
